@@ -1,0 +1,89 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url(https://www.pixground.com/dark-background-abstract-background-4k-wallpaper/?download-img=fhd);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-weight: 790;
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 800px;
+  margin: 60px auto;
+  padding: 50px 100px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d1d1;
+  font-size: 16px;
+  transition: border-color 0.3s ;
+  font-weight: 700;
+}
+
+form input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+form button {
+  grid-column: span 2;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 900;
+}
+
+form button:hover {
+  background-color: #2980b9;
+}
+
+.formvalues, .cards {
+  margin-top: 32px;
+}
+
+.card {
+  background: #ecf0f1;
+  padding: 25px 50px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ;
+  display: flex;
+  gap: 200px;
+  width:auto;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.card img {
+  margin-top: 30px;
+  border-radius: 25px;
+  width: 350px;
+  height: 170px;
+}
