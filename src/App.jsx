@@ -132,6 +132,7 @@ const handleSearch = () => {
             <h3>Car Photo:</h3>
             <img
               src={values.photo}
+              style={{ width: "200px", height: "auto" }}
             />
           </div>
         )}
@@ -147,6 +148,7 @@ const handleSearch = () => {
           value={textSearch}
           onChange={(e) => setTextSearch(e.target.value)}
           placeholder="Search by name"
+          style={{ margin: "20px" }}
         />
         <button onClick={handleSearch}>Search</button>
 
