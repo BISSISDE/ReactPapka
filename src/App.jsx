@@ -147,7 +147,7 @@ const handleSearch = () => {
           type="text"
           value={textSearch}
           onChange={(e) => setTextSearch(e.target.value)}
-          placeholder="Search by name"
+          placeholder="Search"
           style={{ margin: "20px" }}
         />
         <button onClick={handleSearch}>Search</button>
