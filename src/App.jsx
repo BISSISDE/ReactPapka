@@ -41,6 +41,8 @@ const App = () => {
   });
 
   const [cards, setCards] = useState([]);
+  const [originalCards, setOriginalCards] = useState([]);
+  const [textSearch, setTextSearch] = useState("");
 
   const isSubmit = () => {
     const currentYear = parseInt(values.year);
@@ -51,12 +53,22 @@ const App = () => {
     event.preventDefault();
     if (isSubmit()) {
       setCards((prevCards) => [...prevCards, values]);
-      alert("Form submitted ");
+      setOriginalCards((prevCards) => [...prevCards, values]);
+      alert("Form submitted");
       resetForm();
     } else {
       alert("The year of the car is OLD");
     }
   };
+
+const handleSearch = () => {
+  const filter = originalCards.filter((card) =>
+    Object.values(card).some((value) =>
+      value.toString().toLowerCase().includes(textSearch.toLowerCase())
+    )
+  );
+  setCards(filter);
+};
 
   return (
     <div className="App">
@@ -120,7 +132,6 @@ const App = () => {
             <h3>Car Photo:</h3>
             <img
               src={values.photo}
-              style={{ width: "300px", height: "auto" }}
             />
           </div>
         )}
@@ -130,6 +141,15 @@ const App = () => {
 
       <div className="cards">
         <h2>Submitted Cards:</h2>
+
+        <input
+          type="text"
+          value={textSearch}
+          onChange={(e) => setTextSearch(e.target.value)}
+          placeholder="Search by name"
+        />
+        <button onClick={handleSearch}>Search</button>
+
         {cards.map((card, index) => (
           <div className="card" key={index}>
             <div>
@@ -143,7 +163,7 @@ const App = () => {
             </div>
             {card.photo && (
               <div>
-                <img src={card.photo} />
+                <img src={card.photo}/>
               </div>
             )}
           </div>
